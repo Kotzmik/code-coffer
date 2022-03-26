@@ -1,8 +1,10 @@
-##Conway's Game of Life
+## Conway's Game of Life
 
-[Live preview](https://accnotfound.ovh/conway.html)
+**[Live preview](https://accnotfound.ovh/conway.html)**
 
-Main features:
+Made using **React** and **Vite**.
+
+# Main features:
 
     - start and pause the simulation
     - change the state of a cell by manually clicking on the grid
@@ -12,7 +14,7 @@ Main features:
     - dynamic size of the cell grid
     - cycle counter.
 
-Roadmap:
+# Roadmap:
 
     - mobile version,
     - scale the grid based on the size of the display
