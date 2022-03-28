@@ -54,7 +54,8 @@ class Conway extends React.Component {
       running: false,
       speed: 500,
       chance: 50,
-      showPopup: false
+      showPopup: false,
+      showSettings: true,
     }
   }
 
@@ -68,7 +69,7 @@ class Conway extends React.Component {
       this.setState({grid: grid})
   }
 
-  handleCommands(com, val) { //dodaj przypadek dla suwaka
+  handleCommands(com, val) {
     if(com==="start") {
       const running= !this.state.running;
       let cycle=this.state.cycles
@@ -151,18 +152,25 @@ class Conway extends React.Component {
       showPopup: !this.state.showPopup
     });
   }
-
+  toggleMenu() {
+    this.setState({
+      showSettings: !this.state.showSettings
+    });
+  }
   render() {
     return (
       <div className='game'>
         <div >
           <button className='button popupButton' onClick={()=>this.togglePopup()}>i</button>
+          
           <Console 
             onClick={(com, val)=> this.handleCommands(com, val)}
             running={this.state.running}
             cycles={this.state.cycles}
             speed={this.state.speed}
             chance={this.state.chance}
+            showSettings={this.state.showSettings}
+            toggleMenu={()=>this.toggleMenu()}
           />
         </div>
         <div className="board">

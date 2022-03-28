@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import './App.css'
-
+import random from './random.svg'
+import playpause from './playpause.svg'
+import addRow from './addRow.svg'
+import removeRow from './removeRow.svg'
+import addColumn from './addColumn.svg'
+import removeColumn from './removeColumn.svg'
 
 function Start (props){
   return (
@@ -10,7 +15,7 @@ function Start (props){
         className='button startCircle'
         onClick={props.onClick}
         >
-        &#9199;
+       <img src={playpause} className='svg' />
       </button>
     </div>
   )  
@@ -18,11 +23,11 @@ function Start (props){
 
 class Randomize extends React.Component {
   render() {
-    
+    const show=this.props.showSettings;
     return (
-      <div className='consoleItem'>
+      <div className={`consoleItem ${show ? 'hide' : ''}`}>
         <div>
-          {this.props.chance}%
+          Populate {this.props.chance}%
           <input className='slider' type="range" step="1" min="1" max="99" defaultValue={this.props.chance} 
           onChange={(com, val)=>this.props.onClick("chance",event.target.value)}/>
         </div>
@@ -30,7 +35,7 @@ class Randomize extends React.Component {
           className="button"
           onClick={(com, val)=>this.props.onClick("random", this.props.chance)}
         >
-        Randomize
+        <img src={random}  className='svg'/>
       </button>
       </div>
     )
@@ -50,13 +55,13 @@ function Clear (props){
 }
 class Size extends React.Component {
   render() {
-    
+    const show=this.props.showSettings;
     return (
-      <div className='consoleItem'>
-        <button className='button' onClick={(com, val)=>this.props.onClick("row",1)}>Add row</button>
-        <button className='button' onClick={(com, val)=>this.props.onClick("row",-1)}>Remove row</button>
-        <button className='button' onClick={(com, val)=>this.props.onClick("column",1)}>Add column</button>
-        <button className='button' onClick={(com, val)=>this.props.onClick("column",-1)}>Remove column</button>
+      <div className={`consoleItem ${show ? 'hide' : ''}`}>
+        <button className='button' onClick={(com, val)=>this.props.onClick("row",1)}><img src={addRow} className='svg' /></button>
+        <button className='button' onClick={(com, val)=>this.props.onClick("row",-1)}><img src={removeRow} className='svg' /></button>
+        <button className='button' onClick={(com, val)=>this.props.onClick("column",1)}><img src={addColumn} className='svg' /></button>
+        <button className='button' onClick={(com, val)=>this.props.onClick("column",-1)}><img src={removeColumn} className='svg' /></button>
       </div>
     )
   }
@@ -64,9 +69,10 @@ class Size extends React.Component {
 class Speed extends React.Component {
 
   render() {
+    const show=this.props.showSettings;
     return (
-      <div className='consoleItem'>
-      Speed:
+      <div className={`consoleItem ${show ? 'hide' : ''}`}>
+      Delay:
       <input className='input' type="number" step="1"min="1" max="10000" defaultValue={this.props.speed} 
             onChange={(com, val)=>this.props.onClick("speed",event.target.value)}/>
       </div>
@@ -76,20 +82,28 @@ class Speed extends React.Component {
 class Console extends React.Component {
 
     render() {
+      const show=this.props.showSettings
       return (
-        <div className="console">
-          <Start running={this.props.running}onClick={()=>this.props.onClick("start")}/>
-          <Randomize 
-            onClick={(com, val)=>this.props.onClick(com, val)}
-            chance={this.props.chance}
-          />
+        <div className={`console ${show ? 'collapsed' : ''}`}>
+          <button className='button accordion' onClick={()=>this.props.toggleMenu()}>☰</button>
+          <Start running={this.props.running} onClick={()=>this.props.onClick("start")}/>
           <Clear onClick={()=>this.props.onClick("clear")}/>
-          <Speed speed={this.props.speed} onClick={(com, val)=>this.props.onClick(com, val)}/>
-          <Size onClick={(com, val)=>this.props.onClick(com, val)}/>
           <div className='consoleItem'>
           
           Cycles: {this.props.cycles}
           </div>
+          <Randomize 
+            onClick={(com, val)=>this.props.onClick(com, val)}
+            chance={this.props.chance}
+            showSettings={show}
+          />
+          <Speed 
+            speed={this.props.speed} 
+            onClick={(com, val)=>this.props.onClick(com, val)} 
+            showSettings={show}
+          />
+          <Size onClick={(com, val)=>this.props.onClick(com, val)} showSettings={show}/>
+          
         </div>
         
       )

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64"
+   height="64"
+   viewBox="0 0 16.933333 16.933334"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="playpause.svg"
+   inkscape:version="1.1.2 (1:1.1+202202050950+0a00cf5339)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     width="64px"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="51.088465"
+     inkscape:cy="54.447222"
+     inkscape:window-width="1436"
+     inkscape:window-height="876"
+     inkscape:window-x="0"
+     inkscape:window-y="20"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="-4.1407687,8.9337909"
+       orientation="0,-1"
+       id="guide1292" />
+    <sodipodi:guide
+       position="7.9995116,25.125082"
+       orientation="1,0"
+       id="guide1294" />
+    <sodipodi:guide
+       position="0.45125695,14.294997"
+       orientation="0,-1"
+       id="guide1398" />
+    <sodipodi:guide
+       position="0.45125635,3.5725854"
+       orientation="0,-1"
+       id="guide1400" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid1528" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.214753;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:label="Triangle"
+       d="M 0.45125635,13.360748 9.7371382,7.9995425 0.45125695,2.6383366 Z"
+       id="path852" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.329553;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:fill markers stroke"
+       id="rect1424"
+       width="1.6919974"
+       height="12.414082"
+       x="10.379619"
+       y="1.7925014" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.329553;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:fill markers stroke"
+       id="rect1424-6"
+       width="1.6919974"
+       height="12.414082"
+       x="14.646959"
+       y="1.7925009" />
+  </g>
+</svg>
