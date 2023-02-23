@@ -14,10 +14,4 @@ Made using **React** and **Vite**.
     - dynamic size of the cell grid
     - cycle counter.
 
-# Roadmap:
-
-    - mobile version,
-    - scale the grid based on the size of the display
-    - friendlier UI
-
-App will be updated every Monday
+Due to my lack of interest in learning enterprise networks, this project has been abandoned. Maybe it will be remade in a more developer-friendly framework.
