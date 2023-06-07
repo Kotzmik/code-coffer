@@ -3,45 +3,45 @@ import time
 import os
 import pytermgui as ptg
 
-
-def minutes_to_seconds(time):
-    return time*60
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('time', type=int, nargs='?', default=1)
+    parser.add_argument('time_left', type=int, nargs='?', default=30)
     args=parser.parse_args()
 
     ptg.Splitter.set_char("separator", " ")
-    matrix = ptg.PixelMatrix(6, 8, default="black")
-    for y in range(0, matrix.rows):
-        for x in range(0, matrix.columns):
-            matrix[y, x] = "gray"
-    matrix.build()
-    
+    matrix_gray = ptg.PixelMatrix(6, 8, default="gray")
+    matrix_green = ptg.PixelMatrix(6, 8, default="green")
+
     with ptg.WindowManager() as manager:
         manager.layout.add_slot("body")
         
-        window = (
-            ptg.Window(
-                ptg.Splitter(
-                    matrix, matrix, matrix, matrix, matrix, parent_align=1
-                )
-            ,is_dirty="False", title="dupa"
+        splitter = (
+            ptg.Splitter(
+                    matrix_gray
+                    ,parent_align=1, is_dirty="False", title="dupa"
             )
             .center()
         )
+        window = ptg.Window(splitter)
         manager.add(window, assign="body")
-
-    # time_left=minutes_to_seconds(args.time)
-    # while time_left > 0:
-    #     # print(time_left)
-    #     time.sleep(1)
-    #     time_left-=1
-
-        for y in range(0, matrix.rows):
-            for x in range(0, matrix.columns):
-                matrix[y, x] = "green"
+        manager.compositor.run()
         time.sleep(1)
-        matrix.build()
-    # os.system("shutdown now")
+        manager.compositor.stop()
+        splitter += matrix_green
+        manager.compositor.run()
+        # splitter.pop()
+        # splitter += matrix_gray
+        # i=0
+        # switch=True
+        # color="yellow"
+        # while True:
+            # window.pop()
+        #     if switch:
+        #         color="blue"
+        #     else:
+        #         color="green"
+
+        #     time.sleep(1)
+        #     switch= not switch
+        #     i+=1
+        #     if i==10: break

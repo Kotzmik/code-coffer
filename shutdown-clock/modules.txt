@@ -1,2 +1,2 @@
-pytermgui==7.3.0
+pytermgui==7.4.0
 argparse
